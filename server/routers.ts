@@ -111,7 +111,16 @@ export const appRouter = router({
     .mutation(async ({ input, ctx }) => {
       const email = normalizeEmail(input.email);
 
-      const user = await getUserByEmail(email);
+      let user;
+try {
+  user = await getUserByEmail(email);
+} catch (error) {
+  console.error("[LOGIN DATABASE ERROR]", error);
+  throw new TRPCError({
+    code: "INTERNAL_SERVER_ERROR",
+    message: "Error de conexión con la base de datos.",
+  });
+}
 
       if (!user?.passwordHash) {
         throw new TRPCError({
