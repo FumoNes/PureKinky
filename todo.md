@@ -1,0 +1,181 @@
+# Project TODO
+
+- [x] Definir la portada editorial con narrativa de marca, CTAs de descubrimiento y acceso a compra.
+- [x] Construir una navegación móvil-first con acceso persistente al carrito y a las colecciones.
+- [x] Crear un catálogo editorial local, ampliable por datos, sin depender de Shopify.
+- [x] Diseñar un flujo de pedido directo mediante Bizum al 722516474, con resumen de compra y confirmación por WhatsApp.
+- [x] Diseñar la sección de drops destacados con composiciones de producto no convencionales.
+- [x] Crear una sección de producto destacado y una galería lookbook de inspiración streetwear.
+- [x] Incorporar manifiesto de marca, franja de mensajes y captación de newsletter.
+- [x] Establecer una arquitectura de datos y componentes para añadir nuevos drops y fichas de producto sin rediseño.
+- [x] Aplicar la identidad oscura de PureKinky con rosa estratégico, tipografía expresiva y referencia visual FumoNes.
+- [x] Añadir microinteracciones, parallax ligero y transiciones optimizadas y respetuosas con movimiento reducido.
+- [x] Aplicar neumorfismo sutil solo en controles táctiles, filtros y panel del carrito.
+- [x] Validar de forma reproducible accesibilidad, teclado, contraste y flujos del carrito/confirmación en escritorio y móvil.
+- [x] Crear el punto de control final después de las comprobaciones de calidad.
+- [x] Hacer persistente el acceso al carrito y a las colecciones durante el scroll en escritorio y móvil.
+- [x] Registrar suscripciones de newsletter mediante base de datos, con estados de éxito y error reales.
+- [x] Verificar mediante pruebas los controles de apertura/cierre de menú y pedido, y la confirmación de WhatsApp.
+- [x] Documentar el contraste de los elementos críticos sobre fondos oscuros y rosas.
+- [x] Replantear la composición mobile-first para dar más protagonismo a imagen, producto y acceso al pedido.
+- [x] Incorporar la camiseta rosa suministrada como el único producto del Drop 01, con vistas frontal y trasera.
+- [x] Actualizar mensajes, precios y estados del catálogo para el drop único, sin crear productos ficticios.
+- [x] Verificar el refinamiento móvil con captura visual, tipado y pruebas de interacción.
+- [x] Generar una campaña editorial original de modelos de IA con estética dosmilera maleante para la camiseta real.
+- [x] Sustituir las imágenes de producto y lookbook por la nueva campaña, manteniendo la camiseta identificable.
+- [x] Cambiar el nombre del producto a Camiseta Drop 1 x Golfo & Puro y fijar el PVP en 30 €.
+- [x] Verificar la versión actualizada en móvil y escritorio, incluidos el total y el flujo de pedido.
+- [x] Revisar y documentar explícitamente la fidelidad frontal y trasera de la camiseta en la campaña integrada.
+- [x] Verificar mediante pruebas la asignación de los assets de campaña al hero, catálogo, ficha editorial y lookbook.
+- [x] Preservar la dirección negro-rosa, la tipografía contundente y el movimiento actual como base visual de FumoNes.
+- [x] Refinar el ritmo editorial alternando campaña, manifiesto, producto y lookbook sin crear una rejilla de tienda genérica.
+- [x] Incorporar selección de tallas y mejorar la lectura de disponibilidad, precio y CTA en el producto de 30 €.
+- [x] Mejorar la navegación de escritorio y móvil, manteniendo logo y acceso al carrito siempre claros y táctiles.
+- [x] Afinar parallax, entradas, hover y marquesinas para que sean rápidos, coherentes y ligeros en móvil.
+- [x] Reforzar el lookbook con composiciones asimétricas, superposición y jerarquías de imagen editorial.
+- [x] Verificar rendimiento, accesibilidad y adaptación móvil/escritorio tras el pulido.
+- [x] Adaptar el logotipo, microcopy y créditos visibles para presentar la experiencia como línea oficial de FumoNes.
+- [x] Hacer que cantidad y eliminación del carrito distingan correctamente entre tallas del mismo producto.
+- [x] Añadir pruebas para dos tallas del mismo producto y una comprobación reproducible de rendimiento.
+- [x] Restaurar PureKinky como identidad visible en logotipo, metadatos, textos y créditos.
+- [x] Convertir el bloque Drop In en el expositor principal de compra con imagen, precio, disponibilidad, talla y CTA.
+- [x] Ampliar el selector de tallas desde 12 hasta 2XL y mantener cada variante de forma independiente en el pedido.
+- [x] Renombrar Movimiento como PureClub y dirigirlo a una experiencia de newsletter dedicada.
+- [x] Preparar el envío real de newsletter desde fumones@yahoo.com mediante configuración segura y consentimiento de los suscriptores.
+- [x] Añadir inicio de sesión visible mediante la autenticación existente en la web.
+- [x] Crear una puerta de acceso VIP por código con estilo de terminal de seguridad y una zona VIP protegida.
+- [x] Añadir pruebas y validación de compra, tallas, sesión, PureClub y acceso VIP.
+- [x] Configurar PureClub para enviar campañas desde fumones@yahoo.com mediante SMTP autenticado.
+- [x] Establecer el código inicial 6460 en la puerta VIP sin exponerlo en el cliente.
+- [x] Definir el selector completo: 12, 14, XS, S, M, L, XL y 2XL.
+- [x] Añadir consentimiento explícito de PureClub, con checkbox obligatorio, texto legal visible y persistencia de fecha y versión de aceptación.
+- [x] Crear una zona VIP exclusiva visible únicamente tras autenticación y código concedido.
+- [x] Probar los estados de sesión visibles y restringir el envío de campañas PureClub al rol administrador.
+- [x] Eliminar el bloque Focus piece / 01 y la imagen editorial asociada de la chica.
+- [x] Reequilibrar el espacio entre Drop In y lookbook tras retirar el bloque.
+- [x] Verificar que la eliminación no afecte a Drop In, carrito, PureClub ni VIP.
+- [x] Verificar en escritorio la transición entre Drop In y lookbook y ajustar el espaciado si fuera necesario.
+- [x] Añadir una prueba de composición que confirme que Lookbook sigue de forma directa a Drop In sin el bloque eliminado.
+- [x] Diagnosticar por qué el botón Unirme de PureClub no completa la suscripción.
+- [x] Corregir el flujo de alta y mostrar un mensaje de éxito o error accionable.
+- [x] Validar mediante prueba de interfaz y consulta de datos que un registro consentido se persiste correctamente.
+- [x] Ejecutar una comprobación de integración aislada de alta, verificación y limpieza de PureClub.
+- [x] Diagnosticar el rechazo erróneo de un email válido en PureClub.
+- [x] Normalizar caracteres invisibles y formato antes de enviar la suscripción.
+- [x] Sustituir el error técnico de validación por un mensaje claro y accionable.
+- [x] Probar la inscripción con emails válidos e inválidos tras la corrección.
+- [x] Verificar mediante Vitest la normalización de email y el mensaje mostrado para un formato inválido.
+- [x] Usar el email verificado de la sesión iniciada para suscribir a PureClub sin pedirlo manualmente.
+- [x] Dirigir a visitantes sin cuenta al inicio de sesión o registro antes de permitir la suscripción.
+- [x] Mantener visible el estado de cuenta y el consentimiento antes de confirmar la inscripción.
+- [x] Añadir pruebas para suscripción autenticada, perfil sin email y visitante sin sesión.
+- [x] Verificar y reforzar el envío real de campañas de PureClub con feedback de destinatarios y errores accionables.
+- [x] Crear un foro persistente dentro de VIP para usuarios con sesión y acceso VIP concedido.
+- [x] Restringir lectura y publicación del foro a usuarios VIP autorizados y validar sus permisos.
+- [x] Ampliar el panel VIP hasta el 50 % de la pantalla en escritorio manteniendo la experiencia móvil.
+- [x] Añadir pruebas y validación visual de campañas, foro VIP y panel ampliado.
+- [x] Persistir el carrito por cuenta autenticada y restaurarlo tras recarga o nuevo inicio de sesión.
+- [x] Adaptar cada línea del pedido para diferenciar talla, nombre y número de jugador personalizados.
+- [x] Añadir controles opcionales de nombre y dorsal al expositor y catálogo de camisetas.
+- [x] Incluir la personalización en el resumen y mensaje de pedido por WhatsApp/Bizum.
+- [x] Validar con pruebas la sincronización por cuenta, las variantes personalizadas y la experiencia móvil.
+- [x] Añadir manejo de error y estado visible para el guardado automático del carrito por cuenta, con reintento para evitar pérdidas silenciosas.
+- [x] Incorporar nombre y dorsal opcionales en las acciones del catálogo antes de añadir una camiseta personalizada.
+- [x] Mostrar el estado de sincronización y el reintento del carrito junto al acceso de pedido, también con el panel cerrado.
+- [x] Ajustar tamaños, jerarquía y áreas táctiles de cuenta y consentimiento en PureClub para móvil.
+- [x] Añadir un deslizamiento horizontal controlado para los módulos de PureClub cuando el espacio sea reducido.
+- [x] Validar visualmente y mediante pruebas la interacción móvil refinada de PureClub.
+- [x] Diagnosticar y restaurar el envío de campañas para la cuenta administradora, cubriendo errores SMTP y respuesta del panel.
+- [x] Añadir pruebas de contrato para campañas enviadas, sin destinatarios y fallo de transporte.
+- [x] Reforzar el neumorfismo en superficies y controles sin comprometer contraste ni responsive.
+- [x] Validar visualmente escritorio y móvil, ejecutar la suite completa y publicar la corrección.
+- [x] Enlazar Instagram al perfil real de PureKinky/FumoNes en Instagram y crear un apartado de contacto útil.
+- [x] Añadir datos de contacto visibles con Instagram y teléfono, evitando inventar datos empresariales no confirmados.
+- [x] Crear FAQ, devoluciones, términos y privacidad como páginas o paneles navegables desde el pie.
+- [x] Redactar información legal orientativa alineada con España y la UE, dejando claros los datos que debe completar el titular.
+- [x] Validar enlaces, accesibilidad, responsive y navegación legal antes de publicar.
+- [x] Realizar validación visual móvil específica del footer y paneles informativos de contacto, FAQ, envíos, devoluciones, privacidad y términos.
+- [x] Añadir una comprobación explícita de responsive y accesibilidad de los nuevos paneles legales.
+- [x] Guardar un nuevo checkpoint/publicación tras validar campañas, neumorfismo y navegación legal.
+- [x] Realizar capturas móviles específicas de cada panel informativo abierto: Contacto, FAQ, Envíos, Devoluciones, Privacidad y Términos.
+- [x] Añadir una validación explícita responsive de los paneles legales en escritorio y móvil.
+- [x] Añadir una comprobación explícita de accesibilidad: nombre accesible, cierre visible, foco navegable y contenido desplazable.
+- [x] Guardar un nuevo checkpoint/publicación tras las correcciones de campañas, neumorfismo y navegación legal, y confirmar su version_id.
+- [x] Ocultar en móvil la primera imagen del hero, conservándola en escritorio.
+- [x] Retirar los carteles rosas de datos pendientes en Privacidad y Términos sin eliminar el contenido legal útil.
+- [x] Validar los cambios en móvil y escritorio, ejecutar pruebas y publicar un checkpoint nuevo.
+- [x] Reducir el espacio vacío superior del hero móvil y subir el contenido principal manteniendo la cabecera despejada.
+- [x] Validar móvil y escritorio, ejecutar pruebas y publicar un checkpoint nuevo del refinamiento responsive.
+- [x] Restringir en servidor todos los permisos administrativos exclusivamente a danandgal@yahoo.com.
+- [x] Añadir borrado de mensajes del foro VIP con comprobación de administrador en servidor.
+- [x] Añadir bloqueo y desbloqueo persistente de usuarios para impedir su acceso y publicación en VIP.
+- [x] Incorporar controles de moderación visibles solo para la cuenta administradora.
+- [x] Añadir pruebas de permisos, moderación, campañas y aislamiento de usuarios bloqueados.
+- [x] Validar la consola VIP, ejecutar pruebas y publicar un checkpoint nuevo.
+- [x] Añadir una prueba de interfaz que confirme que la moderación solo aparece para danandgal@yahoo.com y no para otros usuarios.
+- [x] Abrir y validar visualmente la consola VIP en escritorio y móvil con los controles de moderación presentes y legibles.
+- [x] Guardar un checkpoint posterior a la validación específica de la consola VIP y marcar la tarea final como completada.
+- [x] Restringir en servidor cualquier consulta o listado de correos de PureClub a danandgal@yahoo.com.
+- [x] Ocultar emails y controles de destinatarios en la interfaz para cualquier otra cuenta.
+- [x] Añadir pruebas de acceso autorizado y rechazo para usuarios no administradores.
+- [x] Validar la protección y publicar un checkpoint nuevo.
+- [x] Proteger el renderizado completo del panel de campañas y contactos para que solo exista para danandgal@yahoo.com.
+- [x] Añadir una prueba de interfaz que confirme la ausencia del panel y los emails para cuentas no autorizadas.
+- [x] Revalidar tipos y pruebas y publicar el checkpoint actualizado de protección de correos.
+- [x] Añadir una prueba específica de que una cuenta no autorizada no renderiza campañas ni el listado de contactos.
+- [ ] Obtener validación visual de la consola VIP abierta con la sesión administradora real en escritorio y móvil.
+- [x] Publicar un checkpoint posterior a la protección final de emails.
+- [ ] Comprobar que danandgal@yahoo.com es aceptado por el permiso admin de campañas sin lanzar un envío masivo.
+- [ ] Verificar contrato, SMTP y estados de campaña mediante pruebas no destructivas.
+- [ ] Comunicar si el envío está listo o si requiere una prueba de entrega controlada.
+- [ ] Preparar recordatorios de WhatsApp para el administrador y clientes indicados mediante Twilio.
+- [ ] Mantener las campañas de email en modo manual hasta nueva indicación.
+- [ ] Añadir control de consentimiento, destinatarios, programación, historial y cancelación para recordatorios.
+- [ ] Solicitar credenciales Twilio mediante configuración segura y probar sin envío real inicial.
+- [x] Sustituir el titular principal “WEAR YOUR NOISE.” por “VISTE COMO SIENTAS” conservando la composición responsive.
+- [x] Validar que no queden referencias visibles al titular anterior y publicar el cambio.
+- [x] Corregir el titular de “VISTE COMO SIENTAS” a “VISTE COMO ERES” y validar la portada antes de publicar.
+- [x] Sustituir el texto introductorio del hero por «Ser puro no es cosa de cualquiera, es como eres.» y validar su publicación.
+- [ ] Sustituir la descripción de Drop In por «Representa lo que eres. Que tu estética hable antes que tus palabras.» y validar su publicación.
+- [x] Sustituir «JUEGA FUERA DEL GUIÓN.» por «JUEGA CON TUS PROPIAS REGLAS» y validar su publicación.
+- [ ] Cambiar el CTA principal del hero a «VISTE SIN PERMISO», conservando el destino hacia la colección y validando su publicación.
+- [x] Sustituir «NO SIGAS LA TENDENCIA. CREA TU PROPIO JUEGO.» por «NO VENIMOS A ENCAJAR. VENIMOS A MOLESTAR.» y validar su publicación.
+- [x] Añadir un efecto hover llamativo y accesible al botón «VISTE SIN PERMISO» y validar la publicación.
+- [ ] Cambiar el botón + del catálogo para dirigir a Drop In y exigir talla y configuración antes de añadir la camiseta al carrito.
+- [ ] Añadir pruebas del nuevo flujo de catálogo hacia Drop In y validar navegación responsive.
+- [x] Añadir un control persistente para activar o silenciar notificaciones del chat VIP.
+- [x] Mantener la publicación abierta a cualquier miembro VIP autorizado y conservar el borrado exclusivo del moderador.
+- [x] Añadir avisos útiles para que la cuenta moderadora detecte nuevas dudas y pueda responderlas.
+- [ ] Cubrir con pruebas los permisos, preferencias de aviso y experiencia responsive del chat VIP.
+- [x] Eliminar «003 / The full signal» y «002 / The after image» de la portada sin alterar los títulos principales.
+- [x] Validar que ambas referencias desaparecen y publicar el ajuste.
+- [x] Cambiar «NO VENIMOS A ENCAJAR. VENIMOS A MOLESTAR.» por «NO VENIMOS A ENCAJAR. VENIMOS A SER NOSOTROS.» y validar su publicación.
+- [x] Auditar autenticación, permisos administrativos, validación de entradas y endpoints expuestos.
+- [x] Añadir límites defensivos de solicitudes, cabeceras de seguridad y manejo seguro de errores.
+- [x] Cubrir con pruebas los controles de seguridad sin romper campañas, VIP, carrito ni pedidos.
+- [x] Comprobar build de producción y publicar el refuerzo de seguridad validado.
+- [x] Añadir middleware global de errores seguro y probar que no expone detalles internos.
+- [x] Implementar banner de cookies con aceptar, rechazar y preferencias configurables.
+- [x] Añadir política de cookies orientativa y acceso permanente a la configuración.
+- [x] Cambiar «Drop In» por «Drop 01», eliminar «10» y «ROSA SIN PERMISO», y sustituir el copy por «Solo para la gente pura».
+- [x] Añadir pruebas de consentimiento, persistencia, copy y navegación responsive.
+- [x] Asegurar que la política de cookies se abre y se lee correctamente en móvil desde banner y footer.
+- [x] Añadir pruebas de navegación móvil hacia cookies y documentar las rutas de edición de Privacidad y Términos.
+- [ ] Reescribir Términos con estructura legal más clara y código JSX mantenible, retirando notas dirigidas al titular.
+- [ ] Validar Términos, accesibilidad, regresiones y publicar la actualización.
+- [x] Sincronizar el título de la pestaña con VITE_APP_TITLE y el favicon con VITE_APP_LOGO.
+- [x] Validar el HTML generado, el build y la carga del logo configurado.
+- [x] Eliminar «Nacido en el asfalto / hecho para lo real.» y actualizar las secciones legales con Daniel Andrés y CP 28792.
+- [x] Validar que no quede el copy anterior y publicar, dejando pendiente el domicilio completo y NIF si no se facilitan.
+- [x] Eliminar las dos notas legales visibles sobre datos del titular y devoluciones.
+- [x] Actualizar el logo configurado y validar favicon, pruebas y build antes de publicar.
+- [x] Restaurar el wordmark textual PUREKINKY junto a Drops, Lookbook y PureClub, manteniendo el favicon configurado.
+- [x] Validar responsive, pruebas, build y publicar el encabezado actualizado.
+- [x] Añadir quiz obligatorio de cinco preguntas para el primer acceso VIP.
+- [x] Validar el 100 % en servidor, entregar 6460 tras aprobar y persistir la aprobación por cuenta.
+- [x] Mantener bloqueado el acceso tras fallar y permitir reintento seguro.
+- [x] Añadir pruebas de respuestas, persistencia, permisos VIP y responsive.
+- [x] Completar el quiz VIP obligatorio y persistir la aprobación server-side antes de entregar el código 6460.
+- [x] Añadir en móvil el toque sobre la foto del expositor para alternar frente y trasera, empezando por la vista frontal.
+- [x] Cubrir quiz, acceso posterior, interacción táctil, pruebas responsive y publicación.
+- [x] Retirar el log de depuración residual y mantener únicamente logs operativos o de verificación explícitos.

@@ -1,0 +1,83 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787837955755,
+      "tag": "0000_young_wendell_rand",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787838971298,
+      "tag": "0001_elite_sentinel",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787875415638,
+      "tag": "0002_red_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787875772737,
+      "tag": "0003_classy_gunslinger",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787881035690,
+      "tag": "0004_busy_sentinels",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1787881281496,
+      "tag": "0005_numerous_bloodstorm",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1787885449539,
+      "tag": "0006_eager_hellion",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1788723662709,
+      "tag": "0007_fancy_meteorite",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1790635767494,
+      "tag": "0008_fine_mister_fear",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1790724616105,
+      "tag": "0009_material_microbe",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1790802767068,
+      "tag": "0010_complex_sabra",
+      "breakpoints": true
+    }
+  ]
+}
