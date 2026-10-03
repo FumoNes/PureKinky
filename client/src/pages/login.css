@@ -28,7 +28,7 @@
     var(--pk-black);
 
   color: var(--pk-white);
-  font-family: inherit;
+  font-family: pirata one;
 }
 
 /* BACKGROUND */
@@ -403,7 +403,7 @@
   background: rgba(255, 255, 255, 0.035);
   color: var(--pk-white);
 
-  font-family: inherit;
+  font-family: pirata one;
   font-size: 12px;
 
   transition:
@@ -482,7 +482,7 @@
   background: var(--pk-pink);
   color: white;
 
-  font-family: inherit;
+  font-family: pirata one;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -530,7 +530,7 @@
 
   color: var(--pk-muted);
 
-  font-family: inherit;
+  font-family: pirata one;
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.12em;
