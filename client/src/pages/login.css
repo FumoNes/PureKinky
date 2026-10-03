@@ -90,7 +90,7 @@
   background: transparent;
   color: var(--pk-muted);
 
-  font-size: 11px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.16em;
 
@@ -107,7 +107,7 @@
 
 .pk-login__back span {
   color: var(--pk-pink);
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .pk-login__counter {
@@ -117,7 +117,7 @@
 
   color: var(--pk-muted);
 
-  font-size: 9px;
+  font-size: 1px;
   font-weight: 700;
   letter-spacing: 0.18em;
 }
@@ -161,7 +161,7 @@
 
   color: var(--pk-pink-soft);
 
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.25em;
 }
@@ -222,7 +222,7 @@
 
   color: var(--pk-muted);
 
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.15em;
 }
@@ -285,7 +285,7 @@
   align-items: center;
   gap: 7px;
 
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
 }
@@ -307,7 +307,7 @@
 
   color: #5f595f;
 
-  font-size: 9px;
+  font-size: 1px;
   letter-spacing: 0.15em;
 }
 
@@ -322,7 +322,7 @@
 
   color: var(--pk-muted);
 
-  font-size: 9px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -356,7 +356,7 @@
 
   color: var(--pk-muted);
 
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -380,7 +380,7 @@
 
   color: #aaa3a9;
 
-  font-size: 8px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.17em;
 }
@@ -404,7 +404,7 @@
   color: var(--pk-white);
 
   font-family: pirata one;
-  font-size: 12px;
+  font-size: 19px;
 
   transition:
     border-color 0.2s ease,
@@ -483,7 +483,7 @@
   color: white;
 
   font-family: pirata one;
-  font-size: 10px;
+  font-size: 23px;
   font-weight: 900;
   letter-spacing: 0.16em;
 
@@ -531,7 +531,7 @@
   color: var(--pk-muted);
 
   font-family: pirata one;
-  font-size: 8px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.12em;
 
@@ -561,7 +561,7 @@
 
   color: #575158;
 
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.15em;
 }
@@ -578,7 +578,7 @@
 
   color: #4d474d;
 
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -633,7 +633,7 @@
 
   .pk-login__manifesto {
     margin-top: 28px;
-    font-size: 28px;
+    font-size: 40px;
   }
 
   .pk-login__meta {
@@ -672,6 +672,6 @@
   }
 
   .pk-login__heading h1 {
-    font-size: 42px;
+    font-size: 40px;
   }
 }
