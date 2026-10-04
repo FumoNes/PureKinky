@@ -4,7 +4,6 @@ import { trpc } from "@/lib/trpc";
 
 export default function PureFilms() {
   const siteSettings = trpc.site.settings.useQuery();
-  console.log("PUREFILMS SETTINGS:", siteSettings.data);
 
   const maintenanceEnabled =
     siteSettings.data?.maintenanceEnabled === true;
