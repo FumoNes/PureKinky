@@ -3,13 +3,16 @@ import { getSiteSettings } from "../db";
 
 const PRIMARY_ADMIN_EMAIL = "danandgal@yahoo.com";
 
-export async function assertSiteAccess(user: {
-  role: "user" | "admin";
-  email: string | null;
-} | null) {
+export async function assertSiteAccess(
+  user: {
+    role: "user" | "admin";
+    email: string | null;
+  } | null,
+  path?: string
+) {
   const settings = await getSiteSettings();
 
-  // La web está abierta.
+  // Si el mantenimiento está desactivado, la web está abierta.
   if (!settings.maintenanceEnabled) {
     return;
   }
@@ -25,10 +28,24 @@ export async function assertSiteAccess(user: {
   }
 
   // Si hay una fecha de finalización y ya ha pasado,
-  // consideramos que la web vuelve a estar abierta.
+  // consideramos que el bloqueo ha terminado.
   if (
     settings.maintenanceEndsAt &&
     settings.maintenanceEndsAt.getTime() <= Date.now()
+  ) {
+    return;
+  }
+
+  const maintenanceMode =
+    settings.maintenanceMode === "purefilms"
+      ? "purefilms"
+      : "all";
+
+  // Si solo está bloqueado PureFilms,
+  // el resto de la web continúa funcionando.
+  if (
+    maintenanceMode === "purefilms" &&
+    path !== "/purefilms"
   ) {
     return;
   }

@@ -61,6 +61,8 @@ export default function Home() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
   const [maintenanceEnabledInput, setMaintenanceEnabledInput] =
   useState(false);
+  const [maintenanceModeInput, setMaintenanceModeInput] =
+  useState<"all" | "purefilms">("all");
 
 const [maintenanceTitleInput, setMaintenanceTitleInput] =
   useState("PRÓXIMO DROP");
@@ -175,10 +177,15 @@ useEffect(() => {
   }
 
   const settings = adminSiteSettings.data;
+setMaintenanceEnabledInput(settings.maintenanceEnabled);
 
-  setMaintenanceEnabledInput(settings.maintenanceEnabled);
-  setMaintenanceTitleInput(settings.maintenanceTitle);
-  setMaintenanceMessageInput(settings.maintenanceMessage ?? "");
+setMaintenanceModeInput(
+  settings.maintenanceMode === "purefilms" ? "purefilms" : "all"
+);
+
+setMaintenanceTitleInput(settings.maintenanceTitle);
+
+setMaintenanceMessageInput(settings.maintenanceMessage ?? "");
 
   if (settings.maintenanceEndsAt) {
     const date = new Date(settings.maintenanceEndsAt);
@@ -321,7 +328,11 @@ return;
 
 const maintenanceCountdown = formatMaintenanceTime(maintenanceTimeLeft);
 
-  if (maintenanceEnabled && !isPrimaryAdmin) {
+ if (
+  maintenanceEnabled &&
+  !isPrimaryAdmin &&
+  siteSettings.data?.maintenanceMode !== "purefilms"
+) {
   return (
     <main className="maintenance-screen">
       <div className="maintenance-screen__inner">
@@ -374,7 +385,12 @@ const maintenanceCountdown = formatMaintenanceTime(maintenanceTimeLeft);
     <a className="skip-link" href="#drops">Saltar a la colección</a>
     <header className="site-header">
       <button className="brand-mark" onClick={() => scrollTo("top")} aria-label="Ir al inicio de PureKinky">PURE<span>KINKY</span></button>
-      <nav className="desktop-nav" aria-label="Navegación principal"><button onClick={() => scrollTo("drops")}>Drops</button><button onClick={() => scrollTo("lookbook")}>Lookbook</button><button onClick={() => scrollTo("pureclub")}>PureClub</button></nav>
+      <nav className="desktop-nav" aria-label="Navegación principal">
+  <button onClick={() => scrollTo("drops")}>Drops</button>
+  <button onClick={() => scrollTo("lookbook")}>Lookbook</button>
+  <button onClick={() => scrollTo("pureclub")}>PureClub</button>
+  <button onClick={() => window.location.href = "/purefilms"}>PureFilms</button>
+</nav>
       <div className="header-actions">{authLoading ? <span className="auth-status">···</span> : isAuthenticated ? <button className="auth-trigger auth-trigger--signed" onClick={() => void logout()} aria-label="Cerrar sesión">{user?.name?.slice(0, 1).toUpperCase() || "P"}</button> : <button className="auth-trigger" onClick={() => setLocation("/entrar")}>Entrar</button>}<button className="vip-trigger" onClick={openVip}><LockKeyhole size={15} /><span>VIP</span></button><button className="cart-trigger" onClick={() => setActivePanel(openPanel("cart"))} aria-label="Abrir pedido"><ShoppingBag size={18} /><span>Pedido</span>{itemCount > 0 && <b>{itemCount}</b>}</button><button className="menu-trigger" aria-label="Abrir menú" onClick={() => setActivePanel(openPanel("menu"))}><Menu size={22} /></button></div>
     </header>
     {isAuthenticated && cartSyncMessage && <aside className="cart-sync-banner" role="status">{cartSyncMessage} <button type="button" onClick={() => setCartSaveRetry(attempt => attempt + 1)}>Reintentar ahora</button></aside>}
@@ -802,6 +818,33 @@ const maintenanceCountdown = formatMaintenanceTime(maintenanceTimeLeft);
           {maintenanceEnabledInput ? "ACTIVADO" : "DESACTIVADO"}
         </span>
       </label>
+      <div className="maintenance-admin-panel__mode">
+  <p className="maintenance-admin-panel__label">
+    BLOQUEAR
+  </p>
+
+  <label>
+    <input
+      type="radio"
+      name="maintenance-mode"
+      value="all"
+      checked={maintenanceModeInput === "all"}
+      onChange={() => setMaintenanceModeInput("all")}
+    />
+    <span>TODA LA WEB</span>
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="maintenance-mode"
+      value="purefilms"
+      checked={maintenanceModeInput === "purefilms"}
+      onChange={() => setMaintenanceModeInput("purefilms")}
+    />
+    <span>SOLO PUREFILMS</span>
+  </label>
+</div>
 
       <label className="maintenance-admin-panel__field">
         <span>FINALIZA</span>
@@ -846,15 +889,15 @@ const maintenanceCountdown = formatMaintenanceTime(maintenanceTimeLeft);
     try {
       console.log("FECHA DEL CONTADOR:", maintenanceEndsAtInput);
 
-      await updateSiteSettings.mutateAsync({
-        maintenanceEnabled: maintenanceEnabledInput,
-        maintenanceEndsAt: maintenanceEndsAtInput
-          ? new Date(maintenanceEndsAtInput)
-          : null,
-        maintenanceTitle: maintenanceTitleInput.trim(),
-        maintenanceMessage: maintenanceMessageInput.trim() || null,
-      });
-
+     await updateSiteSettings.mutateAsync({
+  maintenanceEnabled: maintenanceEnabledInput,
+  maintenanceMode: maintenanceModeInput,
+  maintenanceEndsAt: maintenanceEndsAtInput
+    ? new Date(maintenanceEndsAtInput)
+    : null,
+  maintenanceTitle: maintenanceTitleInput.trim(),
+  maintenanceMessage: maintenanceMessageInput.trim() || null,
+});
       await siteSettings.refetch();
       await adminSiteSettings.refetch();
     } catch (error) {
