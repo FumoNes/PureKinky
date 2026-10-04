@@ -1,0 +1,227 @@
+/* =========================================================
+   PUREFILMS
+   ========================================================= */
+
+.purefilms-page {
+  min-height: 100svh;
+  width: 100%;
+  box-sizing: border-box;
+  background: #080808;
+  color: #ffffff;
+  font-family: "Pirata One", monospace;
+  padding: 40px 6%;
+}
+
+/* ================= HEADER ================= */
+
+.purefilms-header {
+  max-width: 1200px;
+  margin: 0 auto 70px;
+}
+
+.purefilms-back {
+  display: inline-block;
+  margin-bottom: 45px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.purefilms-back:hover {
+  color: #ff3fa4;
+}
+
+.purefilms-title {
+  margin: 0;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.purefilms-title span {
+  color: #ff3fa4;
+}
+
+.purefilms-subtitle {
+  margin-top: 25px;
+  color: #bdbdbd;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+}
+
+/* ================= WORKS ================= */
+
+.purefilms-works {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.purefilms-section-title {
+  margin: 0 0 25px;
+  font-size: 2.5rem;
+    letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ================= GRID ================= */
+
+.purefilms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+
+.purefilm-card {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  background: #111111;
+  border: 1px solid #292929;
+}
+
+/* Placeholder mientras no haya vídeos */
+
+.purefilm-placeholder {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111111,
+      #1a1a1a
+    );
+
+  color: #ff3fa4;
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+}
+
+/* ================= CARD INFO ================= */
+
+.purefilm-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 30px 25px 20px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.95)
+  );
+}
+
+.purefilm-info h3 {
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.purefilm-info p {
+  margin: 5px 0 0;
+  color: #ff3fa4;
+  font-size: 1rem;
+}
+
+/* ================= CONTACT ================= */
+
+.purefilms-contact {
+  max-width: 1200px;
+  margin: 100px auto 20px;
+  padding: 60px 20px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-top: 1px solid #292929;
+}
+
+.purefilms-contact h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.purefilms-contact p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #bdbdbd;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.purefilms-contact a {
+  display: inline-block;
+  padding: 13px 28px;
+
+  background: #ff3fa4;
+  color: #000000;
+
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.purefilms-contact a:hover {
+  background: #ffffff;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 699px) {
+
+  .purefilms-page {
+    padding: 25px 18px;
+  }
+
+  .purefilms-header {
+    margin-bottom: 50px;
+  }
+
+  .purefilms-back {
+    margin-bottom: 35px;
+  }
+
+  .purefilms-title {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .purefilms-subtitle {
+    font-size: 1rem;
+  }
+
+  .purefilms-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .purefilm-card {
+    min-height: 260px;
+  }
+
+  .purefilm-placeholder {
+    min-height: 260px;
+  }
+
+  .purefilm-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .purefilms-contact {
+    margin-top: 70px;
+    padding: 45px 10px;
+  }
+
+}
