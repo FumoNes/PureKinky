@@ -1,0 +1,1 @@
+ALTER TABLE `siteSettings` ADD `maintenanceMode` varchar(20) DEFAULT 'all' NOT NULL;
