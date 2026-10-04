@@ -38,12 +38,6 @@ export const siteSettings = mysqlTable("siteSettings", {
     .default(false)
     .notNull(),
 
-  maintenanceMode: varchar("maintenanceMode", {
-  length: 20,
-})
-  .default("all")
-  .notNull(),  
-
   maintenanceEndsAt: timestamp("maintenanceEndsAt"),
 
   maintenanceTitle: varchar("maintenanceTitle", {

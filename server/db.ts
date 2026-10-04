@@ -305,7 +305,6 @@ export async function getSiteSettings() {
 
 export async function updateSiteSettings(data: {
   maintenanceEnabled?: boolean;
-  maintenanceMode?: "all" | "purefilms";
   maintenanceEndsAt?: Date | null;
   maintenanceTitle?: string;
   maintenanceMessage?: string | null;

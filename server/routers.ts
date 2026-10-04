@@ -275,7 +275,6 @@ site: router({
         maintenanceEndsAt: z.coerce.date().nullable(),
         maintenanceTitle: z.string().trim().min(1).max(120),
         maintenanceMessage: z.string().trim().max(1000).nullable(),
-        maintenanceMode: z.enum(["all", "purefilms"]),
       }),
     )
     .mutation(({ input }) =>

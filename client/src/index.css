@@ -37,12 +37,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .brand-mark span {
   color: #ff3fa4;
 }
-.desktop-nav {
-  display: none;
-  gap: 1.8rem;
-  align-items: center;
-  flex-wrap: nowrap;
-}.desktop-nav button { padding:.4rem 0; background:transparent; font:500 1.25rem "Pirata One",monospace; letter-spacing:.08em; text-transform:uppercase; transition:color .2s ease; }.desktop-nav button:hover { color:#ff3fa4; }
+.desktop-nav { display:none; gap:1.8rem; }.desktop-nav button { padding:.4rem 0; background:transparent; font:500 1.25rem "Pirata One",monospace; letter-spacing:.08em; text-transform:uppercase; transition:color .2s ease; }.desktop-nav button:hover { color:#ff3fa4; }
 .header-actions { display:flex; align-items:center; gap:.7rem; }.cart-trigger,.menu-trigger { min-height:42px; display:grid; place-items:center; border-radius:12px; background:#171717; box-shadow:5px 5px 11px #090909,-3px -3px 8px #252525,inset 0 1px 0 rgba(255,255,255,.04); transition:transform .16s cubic-bezier(.23,1,.32,1),background .2s ease; }.cart-trigger:active,.menu-trigger:active,.button:active{transform:scale(.97);}
 .cart-trigger { position:relative; min-width:43px; grid-auto-flow:column; gap:.4rem; padding:0 .66rem; }.cart-trigger span{display:none;font:500 1.25rem "Pirata One",monospace;text-transform:uppercase;}.cart-trigger b{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:#ff3fa4;color:#0d0d0d;font:700 .62rem "Pirata One",monospace;}.menu-trigger{width:43px;background:#ff3fa4;color:#0d0d0d;box-shadow:4px 4px 10px #090909,-2px -2px 7px #2c2c2c;}
 .hero{position:relative;z-index:0;isolation:isolate;display:flex;align-items:flex-end;min-height:760px;height:100svh;max-height:1040px;padding:130px 5vw 40px;background:#0d0d0d;}.hero__noise{position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");}.hero__orb{position:absolute;z-index:-1;width:48vw;height:48vw;min-width:350px;min-height:350px;border-radius:50%;background:#ff3fa4;filter:blur(100px);opacity:.2;}.hero__orb--one{top:-22%;right:-18%;}
