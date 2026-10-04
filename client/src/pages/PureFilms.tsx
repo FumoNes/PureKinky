@@ -4,7 +4,6 @@ import { trpc } from "@/lib/trpc";
 
 export default function PureFilms() {
   const siteSettings = trpc.site.settings.useQuery();
-  console.log("PUREFILMS SETTINGS:", siteSettings.data);
 
   const maintenanceEnabled =
     siteSettings.data?.maintenanceEnabled === true;
@@ -45,6 +44,16 @@ export default function PureFilms() {
   const maintenanceActive =
     maintenanceEnabled &&
     (!maintenanceEndsAt || maintenanceTimeLeft > 0);
+
+  // Los returns van DESPUÉS de todos los hooks.
+
+  if (siteSettings.isLoading) {
+    return <div>CARGANDO CONFIGURACIÓN...</div>;
+  }
+
+  if (siteSettings.isError) {
+    return <div>ERROR AL CARGAR CONFIGURACIÓN</div>;
+  }
 
   if (maintenanceActive && maintenanceMode === "purefilms") {
     return (
@@ -144,12 +153,12 @@ export default function PureFilms() {
         </p>
 
         <a
-  href="https://wa.me/34722516474?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20PureFilms"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  CONTACTAR
-</a>
+          href="https://wa.me/34722516474?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20PureFilms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONTACTAR
+        </a>
 
       </section>
 
