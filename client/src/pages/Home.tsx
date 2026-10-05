@@ -155,6 +155,37 @@ const updateSiteSettings = trpc.site.update.useMutation();
   const cartOpen = activePanel === "cart";
   useEffect(() => { document.body.style.overflow = activePanel || infoPage ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [activePanel, infoPage]);
   
+useEffect(() => {
+  const slider = document.querySelector(".newsletter__inner");
+  const thumb = document.querySelector(".pureclub-scrollbar__thumb");
+
+  if (!slider || !thumb) return;
+
+  const updateScrollIndicator = () => {
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+    if (maxScroll <= 0) {
+      (thumb as HTMLElement).style.transform = "translateX(0)";
+      return;
+    }
+
+    const progress = slider.scrollLeft / maxScroll;
+    const trackWidth = slider.clientWidth;
+    const thumbWidth = 55;
+    const maxMove = trackWidth - thumbWidth;
+
+    (thumb as HTMLElement).style.transform =
+      `translateX(${progress * maxMove}px)`;
+  };
+
+  slider.addEventListener("scroll", updateScrollIndicator);
+  updateScrollIndicator();
+
+  return () => {
+    slider.removeEventListener("scroll", updateScrollIndicator);
+  };
+}, []);
+
   useEffect(() => {
     const posts = vipForum.data ?? [];
     if (seenVipPostIds.current === null) { seenVipPostIds.current = new Set(posts.map(post => post.id)); return; }
@@ -402,7 +433,68 @@ const maintenanceCountdown = formatMaintenanceTime(maintenanceTimeLeft);
 
     <section className="catalog section" id="catalog"><div className="section-head catalog__head"><div><h2>ALL <em>DROP</em></h2></div><p>Catálogo abierto. Añade tu selección y confirma el pedido de forma directa.</p></div><div className="catalog__filters" aria-label="Filtrar catálogo">{catalogCategories.map(item => <button key={item} className={category === item ? "is-active" : ""} onClick={() => setCategory(item)}>{item}</button>)}</div><div className="catalog__grid">{filtered.map((product, index) => <ProductCard product={product} index={index} key={product.id} onConfigure={configureFromCatalog} />)}</div></section>
 
-    <section className="newsletter section" id="pureclub"><div className="newsletter__tape">PURECLUB / PRIMERO EN ENTERARTE / PURECLUB / PRIMERO EN ENTERARTE /</div><div className="newsletter__inner"><p className="eyebrow eyebrow--pink">PureClub / Acceso anticipado</p><h2>ENTRA EN<br /><em>PURECLUB.</em></h2><p>Drop alerts, acceso anticipado y señales que no llegan a todo el mundo.</p><form onSubmit={onNewsletter} noValidate><div className={`newsletter-account ${isAuthenticated ? "is-connected" : ""}`}><span>{isAuthenticated ? "Cuenta conectada" : "PureClub requiere cuenta"}</span>{isAuthenticated && user?.email ? <strong>{user.email}</strong> : <button type="button" onClick={() => setLocation("/entrar")}>Iniciar sesión o crear cuenta <ArrowRight size={15} /></button>}</div><label className="consent-check" htmlFor="pureclub-consent"><input id="pureclub-consent" type="checkbox" checked={pureClubConsent} onChange={event => { setPureClubConsent(event.target.checked); setNewsletterMessage(""); }} disabled={newsletterSubscription.isPending} /><span>Acepto recibir comunicaciones de PureClub y confirmo haber leído la <a href="#top">política de privacidad</a>.</span></label><button type="submit" disabled={newsletterSubscription.isPending}>{newsletterSubscription.isPending ? "Entrando..." : isAuthenticated ? <>Unirme con mi cuenta <Send size={17} /></> : <>Entrar para unirme <ArrowRight size={17} /></>}</button></form><p id="pureclub-status" className={`newsletter-status ${newsletterMessage ? "is-visible" : ""}`} role="status" aria-live="polite">{newsletterMessage}</p><div className="pureclub-tools"><button className="pureclub-vip" onClick={openVip}><Terminal size={17} /><span>{vipStatus.data ? "VIP VERIFIED / ENTRAR" : "VIP TERMINAL / ACCESO"}</span><ArrowRight size={16} /></button>{isPrimaryAdmin && <button className="pureclub-admin" onClick={() => setActivePanel(openPanel("campaign"))}>Enviar campaña <Send size={15} /></button>}{isPrimaryAdmin && <button className="pureclub-admin" onClick={() => setActivePanel(openPanel("maintenance"))}>Control web <Terminal size={15} /></button>}</div></div></section>
+    <section className="newsletter section" id="pureclub">
+  <div className="pureclub-scrollbar" aria-hidden="true">
+    <div className="pureclub-scrollbar__thumb" />
+  </div>
+      
+      <div className="newsletter__tape">PURECLUB / PRIMERO EN ENTERARTE / PURECLUB / PRIMERO EN ENTERARTE /</div><div className="newsletter__inner">
+        <p className="eyebrow eyebrow--pink">PureClub / Acceso anticipado</p><h2>ENTRA EN<br /><em>PURECLUB.</em></h2><p>Drop alerts, acceso anticipado y señales que no llegan a todo el mundo.</p>
+        
+        <form onSubmit={onNewsletter} noValidate>
+
+  <div className="newsletter-mobile-scroll">
+
+    <div className={`newsletter-account ${isAuthenticated ? "is-connected" : ""}`}>
+      <span>
+        {isAuthenticated ? "Cuenta conectada:" : "PureClub requiere cuenta..."}
+      </span>
+
+      {isAuthenticated && user?.email ? (
+        <strong>{user.email}</strong>
+      ) : (
+        <button type="button" onClick={() => setLocation("/entrar")}>
+          Iniciar sesión o crear cuenta <ArrowRight size={15} />
+        </button>
+      )}
+    </div>
+
+    <label className="consent-check" htmlFor="pureclub-consent">
+      <input
+        id="pureclub-consent"
+        type="checkbox"
+        checked={pureClubConsent}
+        onChange={event => {
+          setPureClubConsent(event.target.checked);
+          setNewsletterMessage("");
+        }}
+        disabled={newsletterSubscription.isPending}
+      />
+
+      <span>
+        Acepto recibir comunicaciones de PureClub y confirmo haber leído la{" "}
+        <a href="#top">política de privacidad</a>.
+      </span>
+    </label>
+
+    <button type="submit" disabled={newsletterSubscription.isPending}>
+      {newsletterSubscription.isPending
+        ? "Entrando..."
+        : isAuthenticated
+          ? <>UNIRME A LA FAMILIA <Send size={17} /></>
+          : <>Entrar para unirme <ArrowRight size={17} /></>}
+    </button>
+
+  </div>
+
+</form> <p id="pureclub-status" className={`newsletter-status ${newsletterMessage ? "is-visible" : ""}`} role="status" aria-live="polite">{newsletterMessage}</p>
+          <div className="pureclub-tools">
+            <button className="pureclub-vip" onClick={openVip}>
+              <Terminal size={17} />
+          <span>{vipStatus.data ? "VIP VERIFIED / ENTRAR" : "VIP TERMINAL / ACCESO"}</span><ArrowRight size={16} />
+          </button>{isPrimaryAdmin && 
+          <button className="pureclub-admin" onClick={() => setActivePanel(openPanel("campaign"))}>Enviar campaña <Send size={15} /></button>}{isPrimaryAdmin && <button className="pureclub-admin" onClick={() => setActivePanel(openPanel("maintenance"))}>Control web <Terminal size={15} /></button>}</div></div>
+          </section>
 
     <footer className="footer"><div className="footer__brand">
   <img
