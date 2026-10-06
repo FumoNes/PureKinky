@@ -184,13 +184,13 @@ describe("interacciones del inicio PureKinky", () => {
     expect(quizSubmitMutateAsync).toHaveBeenCalledWith({ answers: [2, 0, 2, 0, 0] });
   });
 
-  it("muestra el código 6460 en el acceso posterior a un quiz aprobado", async () => {
+  it("muestra el código 3317 en el acceso posterior a un quiz aprobado", async () => {
     const user = userEvent.setup();
     authMock.state = { user: { name: "Club", email: "club@purekinky.es", role: "user" }, loading: false, isAuthenticated: true, logout: vi.fn() };
     vipUiMock.quizCompleted = true;
     render(<Home />);
     await user.click(screen.getAllByRole("button").find(button => button.textContent?.trim() === "VIP")!);
-    expect(screen.getByText("6460")).toBeTruthy();
+    expect(screen.getByText("3317")).toBeTruthy();
     expect(screen.getByLabelText("Código de acceso")).toBeTruthy();
   });
 

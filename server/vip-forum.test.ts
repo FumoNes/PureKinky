@@ -63,14 +63,14 @@ describe("vip.forum", () => {
 
   it("bloquea el código hasta que exista una aprobación persistida", async () => {
     vi.mocked(hasVipQuizCompletion).mockResolvedValue(false);
-    await expect(appRouter.createCaller(vipContext).vip.unlock({ code: "6460" })).rejects.toMatchObject({ code: "FORBIDDEN" });
+    await expect(appRouter.createCaller(vipContext).vip.unlock({ code: "3317" })).rejects.toMatchObject({ code: "FORBIDDEN" });
     expect(grantVipAccess).not.toHaveBeenCalled();
   });
 
   it("acepta el código correcto solo con un quiz aprobado", async () => {
     vi.mocked(hasVipQuizCompletion).mockResolvedValue(true);
     vi.mocked(grantVipAccess).mockResolvedValue({ granted: true });
-    await expect(appRouter.createCaller(vipContext).vip.unlock({ code: "6460" })).resolves.toEqual({ granted: true });
+    await expect(appRouter.createCaller(vipContext).vip.unlock({ code: "3317" })).resolves.toEqual({ granted: true });
     expect(grantVipAccess).toHaveBeenCalledWith(44);
   });
 
